@@ -31,6 +31,17 @@ A requirements.txt file has been included in the repository for installation of 
 - seaborn
 
 
+##For our analysis we are adopting the CRISP-DM approach (The CRoss Industry Standard Process for Data Mining.
+It has six sequential phases:
+
+- Business understanding
+- Data understanding
+- Data preparation 
+- Modeling - Linear Regression 
+- Evaluation - R2 Score
+- Deployment – Github & Medium (https://medium.com/@emmaezenwere/how-to-be-a-top-earner-in-technology-data-insights-b042916afe4d)
+
+
 ## Summary of the results of the analysis; 
 
 ------------------------------------------------------
