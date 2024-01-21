@@ -328,7 +328,7 @@ data_frame['Industry'] = data_frame['Industry'].str.replace('Higher Education', 
 
 data_frame['EdLevel'] = data_frame['EdLevel'].str.replace('Bachelor’s degree (B.A., B.S., B.Eng., etc.)', 'B.Sc/B.Eng/B.A')
 data_frame['EdLevel'] = data_frame['EdLevel'].str.replace('Master’s degree (M.A., M.S., M.Eng., MBA, etc.)', 'M.')
-data_frame['EdLevel'] = data_frame['EdLevel'].str.replace('Some college/university study without earning a degree', 'DropOut')
+data_frame['EdLevel'] = data_frame['EdLevel'].str.replace('Some college/university study without earning a degree', 'no_degree')
 data_frame['EdLevel'] = data_frame['EdLevel'].str.replace('Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)', 'Sec')
 data_frame['EdLevel'] = data_frame['EdLevel'].str.replace('Professional degree (JD, MD, Ph.D, Ed.D, etc.)', 'Doctorate')
 data_frame['EdLevel'] = data_frame['EdLevel'].str.replace('Associate degree (A.A., A.S., etc.)', 'Associate')
@@ -749,17 +749,17 @@ print(f"DatabaseWantToWorkWith : {data_frame.loc[respondent_id]['DatabaseWantToW
 # -----------------------------------------------------------------------------
 print("\n\n")
 print_bar()
-print("Dropout Earnings - Case Study")
+print("No Degree Earnings - Case Study")
 print_bar()
-filter_  = 'DropOut'
+filter_  = 'no_degree'
 mask = data_frame['EdLevel'] == filter_
 drop_outs = data_frame[mask.reindex_like(data_frame)]
 filter_ =  "ConvertedCompYearly"
-dropout_top_x_ids = drop_outs[filter_].nlargest(x).index.tolist()
-dropout_top_earners =  data_frame.iloc[dropout_top_x_ids]
+no_degree_top_x_ids = drop_outs[filter_].nlargest(x).index.tolist()
+no_degree_top_earners =  data_frame.iloc[no_degree_top_x_ids]
 
 for column in column_names:
-    distr = dropout_top_earners[column].value_counts()
+    distr = no_degree_top_earners[column].value_counts()
     xmost_freq = distr.head(1)
     indices = xmost_freq.index
     values = xmost_freq.values
