@@ -1,15 +1,7 @@
-import datetime
-import pprint
-import matplotlib
-import numpy
-import pandas
-import seaborn
-from sklearn.model_selection import learning_curve
-import sklearn
-
-pandas
-numpy
-matplotlib
-pprint
-seaborn
 datetime
+pprint
+matplotlib
+numpy
+pandas
+seaborn
+sklearn
